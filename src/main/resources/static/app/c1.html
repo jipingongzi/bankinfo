@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="no-siteapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="问卷">
+    <title>问卷</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="margin-top: 50px;margin-bottom: 40px">
+        <div class="well col-md-6 col-centered">
+            <h3 align="center">问卷填写</h3>
+
+            <div class="form-group">
+                <h4 align="center" style="margin: 20px"><strong>C.不宜流通币兑换业务</strong></h4>
+                <label>C1.相关环境与设施要求</label>
+
+                <p>1.不宜流通币宣传海报及宣传册的张贴展示</p>
+                <p>2.不宜流通币样币册的陈列展示</p>
+                <p>3.上述海报和样币册如无固定在营业网点业务办理等候区显眼位置展示，应集成在一站式自助查询电子显示屏进行公示</p>
+
+            </div>
+
+            <div class="radio">
+                <label>
+                    <input type="radio" name="c1" value="option1">
+                    样币册和宣传海报的张贴陈列符合规范
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="c1" value="option2">
+                    样币册和宣传海报的张贴陈列不符合规范
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="c1" value="option3">
+                    未张贴陈列样币册和宣传海报，但有电子显示屏集成公示
+                </label>
+            </div>
+            <button type="btn" class="btn btn-default" onclick="pre()">上一题</button>
+            <button type="btn" class="btn btn-default" onclick="next()">下一题</button>
+        </div>
+</div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="result.js"></script>
+<script>
+    init();
+
+    function init() {
+        var currentValue = window.localStorage.getItem('c1');
+        if( window.localStorage.getItem('c1')){
+            $("input[type=radio][name=c1][value="+ currentValue +"]").attr("checked",'checked')
+        }
+    }
+    function pre() {
+        history.go(-1)
+    }
+    function next() {
+        window.localStorage.setItem('c1',$('input:radio[name=a1]:checked').val());
+        $(window).attr('location','c2.html');
+    }
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="no-siteapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="问卷">
+    <title>问卷</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div style="margin-top: 50px">
+        <footer class="footer navbar-fixed-bottom" >
+            <p onclick="back()" class="bg-success" style="height: 50px;text-align: center;vertical-align: middle;line-height: 50px">
+                <strong><span style="font-size: large;">回到调查列表页</span></strong>
+            </p>
+        </footer>
+    </div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+function back() {
+    $(window).attr('location','../list.html');
+
+}
+</script>
+</html>

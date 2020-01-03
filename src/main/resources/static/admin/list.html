@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="列表数据查询">
+    <title>列表数据查询</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="margin-top: 50px">
+    <h3 align="center" style="margin-bottom: 40px"><strong>列表数据查询</strong></h3>
+    <hr/>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>银行</th>
+            <th>网点</th>
+            <th>分数</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>中国建设银行</td>
+            <td>顺城大街支行</td>
+            <td>87</td>
+            <td><button class="btn btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>中国工商银行</td>
+            <td>青阳支行</td>
+            <td>87</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>中国银行</td>
+            <td>成都支行</td>
+            <td>90</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>中国农业银行</td>
+            <td>成都支行</td>
+            <td>90</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>中国工商银行</td>
+            <td>成都支行</td>
+            <td>89</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">6</th>
+            <td>平安银行</td>
+            <td>成都支行</td>
+            <td>95</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">7</th>
+            <td>中国银行</td>
+            <td>成都支行</td>
+            <td>90</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">8</th>
+            <td>中国银行</td>
+            <td>成都支行</td>
+            <td>90</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">9</th>
+            <td>中国银行</td>
+            <td>成都支行</td>
+            <td>90</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">10</th>
+            <td>中国银行</td>
+            <td>成都支行</td>
+            <td>90</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <nav aria-label="...">
+            <ul class="pager">
+                <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span>上一页</a></li>
+                <li class="next"><a href="#">下一页<span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div style="margin-top: 80px">
+    <footer class="footer navbar-fixed-bottom" >
+        <p onclick="backIndex()" class="bg-info" style="height: 50px;text-align: center;vertical-align: middle;line-height: 50px">
+            <strong><span style="font-size: large;">回到首页</span></strong>
+        </p>
+    </footer>
+</div>
+
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    function backIndex() {
+        $(window).attr('location', 'manage.html');
+    }
+    function detail() {
+        $(window).attr('location', 'detail/detail_a1.html');
+    }
+</script>
+</html>

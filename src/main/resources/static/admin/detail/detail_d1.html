@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="no-siteapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="问卷">
+    <title>问卷</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="import" href="back_list.html" id="backList"/>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;margin-bottom: 40px">
+        <div class="well col-md-6 col-centered">
+            <h3 align="center">问卷详情</h3>
+
+            <div class="form-group">
+                <h4 align="center" style="margin: 20px"><strong>D.人民币真伪鉴别服务</strong></h4>
+                <label>D1.服务有效性考核</label>
+                <br>
+                <label style="color: red">该调查得分：87</label>
+                <hr/>
+                <label style="color: red">所属银行：建设银行</label><br>
+                <label style="color: red">调查网点：顺城大街支行</label><br>
+                <label style="color: red">调查人员：肖潇洒</label>
+                <hr/>
+                <p>客户向网点提出提供人民币真伪鉴定服务要求</p>
+            </div>
+
+            <div class="radio">
+                <label>
+                    <input type="radio" name="d1" value="option1">
+                    网点提供无偿的人民币真伪鉴定服务，不拒绝或推诿
+                </label>
+            </div>
+            <div class="radio">
+                <label style="color: red">
+                    <input type="radio" name="d1" value="option2">
+                    网点拒绝提供无偿的人民币真伪鉴定服务
+                </label>
+            </div>
+            <button type="btn" class="btn btn-default" onclick="pre()">上一题</button>
+            <button type="btn" class="btn btn-default" onclick="next()">下一题</button>
+        </div>
+</div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="back_list.js"></script>
+
+<script>
+    init();
+
+    function init() {
+        var currentValue = window.localStorage.getItem('d1');
+        if( window.localStorage.getItem('d1')){
+            $("input[type=radio][name=d1][value="+ currentValue +"]").attr("checked",'checked')
+        }
+    }
+    function pre() {
+        history.go(-1)
+    }
+    function next() {
+        window.localStorage.setItem('d1',$('input:radio[name=d1]:checked').val());
+        $(window).attr('location','detail_d2.html');
+    }
+</script>
+</html>

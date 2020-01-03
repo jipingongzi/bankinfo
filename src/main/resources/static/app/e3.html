@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="no-siteapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="问卷">
+    <title>问卷</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="margin-top: 50px;margin-bottom: 40px">
+        <div class="well col-md-6 col-centered">
+            <h3 align="center">问卷填写</h3>
+
+            <div class="form-group">
+                <h4 align="center" style="margin: 20px"><strong>E.小额人民币兑换服务</strong></h4>
+                <label>E3.服务规范性考核——高柜人员——兑换过程操作规范</label>
+
+                <p>1.严格按照小额人民币兑换相关标准无偿为客户办理兑换业务</p>
+                <p>2.兑换过程中，准确解答客户提出的相关业务问题</p>
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="1" name="e3">
+                    兑换过程符合规范
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="2" name="e3">
+                    兑换过程不规范
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="3" name="e3">
+                    能准确解答客户提出的疑议，并能提出解决方案
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="4" name="e3" >
+                    对客户提出的疑议不能准确解答，求助后能提出解决方案
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="4" name="e3" >
+                    对客户提出的疑议不能准确解答，且未能提出解决方案
+                </label>
+            </div>
+
+            <button type="btn" class="btn btn-default" onclick="pre()">上一题</button>
+            <button type="btn" class="btn btn-default" onclick="next()">下一题</button>
+        </div>
+</div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="result.js"></script>
+<script>
+
+    init();
+
+    function init() {
+        var currentValue = window.localStorage.getItem('e3').split(',');
+        for (var i = 0; i < currentValue.length ; i++) {
+            $('input[name="e3"]').each(function(){
+                if($(this).val() == currentValue[i]){
+                    $(this).attr("checked", true);
+                }
+            });
+        }
+    }
+    function pre() {
+        history.go(-1)
+    }
+    function next() {
+        var a4Value=[];
+        $('input[name="e3"]:checked').each(function(){
+            a4Value.push($(this).val()); 
+        });
+        window.localStorage.setItem('e3',a4Value);
+        $(window).attr('location','e4.html');
+    }
+</script>
+</html>

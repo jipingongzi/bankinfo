@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="no-siteapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="问卷">
+    <title>问卷</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="import" href="back_list.html" id="backList"/>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;margin-bottom: 40px">
+        <div class="well col-md-6 col-centered">
+            <h3 align="center">问卷详情</h3>
+
+            <div class="form-group">
+                <h4 align="center" style="margin: 20px"><strong>A.残币兑换业务</strong></h4>
+                <label>A4.服务规范性考核——高柜人员——兑换过程操作规范</label>
+                <br>
+                <label style="color: red">该调查得分：87</label>
+                <hr/>
+                <label style="color: red">所属银行：建设银行</label><br>
+                <label style="color: red">调查网点：顺城大街支行</label><br>
+                <label style="color: red">调查人员：肖潇洒</label>
+                <hr/>
+                <p><strong>高柜人员</strong></p>
+                <p>兑换过程操作规范</p>
+                <p>1.严格按照《残损币兑换标准》无偿为客户办理残损币兑换业务，并对客户做好兑换结果的解释工作：</p>
+                <ol>
+                    <li>能辨别面额，票面剩余四分之三（含四分之三）以上，其图案，文字能按原样连接的残缺，污损人民币，金融机构应向持有人全额兑换</li>
+                    <li>能辨别面额，票面剩余二分之一（含二分之一）以上，其图案，文字能按原样连接的残缺，污损人民币，金融机构应向持有人按半额兑换。纸币呈正十字形缺少四分之一的，按原面额的一半兑换</li>
+                    <li>能辨别面额，票面剩余二分之一（含二分之一）以下，不予兑换</li>
+                </ol>
+                <p>2.客户同意，柜员填单由客户签字后，柜员应在兑换后当客户面在残损币上盖章</p>
+                <p>3.如客户不同意兑换结果，柜员应向客户出具认定证明，并告知客户相关权益</p>
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="1" name="a4">
+                    兑换过程符合规范
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="2" name="a4">
+                    未按标准正确兑换金额
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="3" name="a4">
+                    未向客户说明客户对兑换结果有异议时的客户权益
+                </label>
+            </div>
+            <div class="checkbox">
+                <label style="color: red">
+                    <input type="checkbox" value="4" name="a4" >
+                    未当客户面给残损币盖章
+                </label>
+            </div>
+
+            <button type="btn" class="btn btn-default" onclick="pre()">上一题</button>
+            <button type="btn" class="btn btn-default" onclick="next()">下一题</button>
+        </div>
+</div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="back_list.js"></script>
+
+<script>
+
+    init();
+
+    function init() {
+    }
+    function pre() {
+        history.go(-1)
+    }
+    function next() {
+        $(window).attr('location','detail_a5.html');
+    }
+</script>
+</html>

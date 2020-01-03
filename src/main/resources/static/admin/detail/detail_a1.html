@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="no-siteapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="问卷">
+    <title>问卷</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="import" href="back_list.html" id="backList"/>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;margin-bottom: 40px">
+        <div class="well col-md-6 col-centered">
+            <h3 align="center">问卷详情</h3>
+
+            <div class="form-group">
+                <h4 align="center" style="margin: 20px"><strong>A.残币兑换业务</strong></h4>
+                <label>A1.相关环境与设施要求</label>
+                <br>
+                <label style="color: red">该调查得分：87</label>
+
+                <hr/>
+                <label style="color: red">所属银行：建设银行</label><br>
+                <label style="color: red">调查网点：顺城大街支行</label><br>
+                <label style="color: red">调查人员：肖潇洒</label>
+                <hr/>
+
+                <p>1.营业网点门口悬挂‘残缺，污损人民币点’标识牌</p>
+                <p>2.印刷关于《不宜流通人民币 纸币行业标准》，《不宜流通人民币 硬币行业标准》和《中国人民银行残缺污损人民币兑换方法》的宣传海报</p>
+                <p>2.印刷关于《不宜流通人民币 纸币行业标准》，《不宜流通人民币 硬币行业标准》和《中国人民银行残缺污损人民币兑换方法》的宣传海报</p>
+                <p>3.印刷残缺污损人民币兑换流程，本机构的兑换网点名称，第一南任人，业务联系人及联每户电话的海报</p>
+                <p>4.上述标识牌和海报如无固定在营业网点等业务办理等候区显眼位置展示，应集成在一站式资助查询电子显示屏进行公告</p>
+
+                <p><strong>标准</strong></p>
+                <p><strong>1.标识牌规格：</strong>
+                    纵400毫米，横600毫米，底色为黄色，名称字体为隶书，颜色为红色，举报电话号码为黑色
+                </p>
+                <p><strong>2.相关标准及兑换办法的宣传海报规格：</strong>
+                    厚20毫米，纵1000毫米，横600毫米，底色为淡蓝色，名称字体为黑体，颜色为黑色
+                </p>
+                <p><strong>3.兑换流程等相关宣传海报规格：</strong>
+                    厚20毫米，纵1000毫米，横600毫米，底色为淡蓝色，名称字体为黑体，颜色为黑色
+                </p>
+                <p><strong>提示：</strong>
+                    出现一处扣全分
+                </p>
+            </div>
+
+            <div class="radio">
+                <label>
+                    <input type="radio" name="a1" value="option1">
+                    标识牌和宣传海报的张贴符合规范
+                </label>
+            </div>
+            <div class="radio">
+                <label style="color: red">
+                    <input type="radio" name="a1" value="option2">
+                    标识牌和宣传海报的张贴符合不规范
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="a1" value="option3">
+                    未张贴标识牌和宣传海报，但有电子显示屏集成公示
+                </label>
+            </div>
+
+            <button type="btn" class="btn btn-default" onclick="next()">下一题</button>
+        </div>
+</div>
+
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="back_list.js"></script>
+<script>
+
+    init();
+
+    function init() {
+    }
+    function next() {
+        $(window).attr('location','detail_a2.html');
+    }
+</script>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="数据统计分析">
+    <title>数据统计分析</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="margin-top: 50px">
+    <h3 align="center" style="margin-bottom: 40px"><strong>数据统计分析</strong></h3>
+    <hr/>
+    <div align="center" style="align-content: center">
+        <a class="btn btn-info" style="width: 100%;font-size: large" href="http://h4jnrq.natappfree.cc/rest/data/export">导出详细数据分析表</a>
+    </div>
+    <hr/>
+    <div id="container" style="width:95%;height:400px"></div>
+    <hr/>
+    <div id="container2" style="width:95%;height:400px"></div>
+    <hr/>
+    <div id="container3" style="width:95%;height:400px"></div>
+</div>
+
+<div style="margin-top: 80px">
+    <footer class="footer navbar-fixed-bottom" >
+        <p onclick="backIndex()" class="bg-info" style="height: 50px;text-align: center;vertical-align: middle;line-height: 50px">
+            <strong><span style="font-size: large;">回到首页</span></strong>
+        </p>
+    </footer>
+</div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script>
+    init1();
+    init2();
+    init3();
+    clear();
+    function clear() {
+        $("text.highcharts-credits").hide();
+    }
+
+    function init1() {
+        var chart = Highcharts.chart('container',{
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '分数数据绘制'
+            },
+            subtitle: {
+                text: '数据来源:数据分析库'
+            },
+            xAxis: {
+                categories: [
+                    '中国银行','平安银行','光大银行','建设银行','工商银行','招商银行','中信银行','农业银行','交通银行'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '分数'
+                }
+            },
+            tooltip: {
+                // head + 每个 point + footer 拼接成完整的 table
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: '最高分',
+                data: [49.9, 71.5, 96.4, 69.2, 74.0, 76.0, 95.6, 8.5, 96.4]
+            }, {
+                name: '最低分',
+                data: [83.6, 78.8, 98.5, 93.4, 86.0, 84.5, 85.0, 64.3, 91.2]
+            }, {
+                name: '平均分',
+                data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4]
+            }, {
+                name: '合格率',
+                data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6]
+            }]
+        });
+    }
+    function init2() {
+        Highcharts.chart('container2', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: '调查次数数据绘制'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: 'Brands',
+                colorByPoint: true,
+                data: [{
+                    name: '中国银行',
+                    y: 40.41,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: '光大银行',
+                    y: 11.84
+                }, {
+                    name: '平安银行',
+                    y: 10.85
+                }, {
+                    name: '建设银行',
+                    y: 4.67
+                }, {
+                    name: '工商银行',
+                    y: 4.18
+                }, {
+                    name: '招商银行',
+                    y: 2.64
+                }, {
+                    name: '中信银行',
+                    y: 7.6
+                }, {
+                    name: '农业银行',
+                    y: 3.2
+                }, {
+                    name: '交通银行',
+                    y: 7.61
+                },
+                {
+                    name: '光大银行',
+                    y: 6
+                }]
+            }]
+        });
+    }
+    function init3() {
+        var chart = Highcharts.chart('container3', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '各银行平均份数排名'
+            },
+            subtitle: {
+                text: '数据截止 2020-01'
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45  // 设置轴标签旋转角度
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '分数'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: '分数: <b>{point.y:.1f} 分</b>'
+            },
+            series: [{
+                name: '总人口',
+                data: [
+                    ['中国银行', 24.25],
+                    ['建设银行', 23.50],
+                    ['工商银行', 21.51],
+                    ['交通银行', 16.78],
+                    ['农业银行', 16.06],
+                    ['光大银行', 15.20],
+                    ['中信银行', 14.16],
+                    ['招商银行', 13.51],
+                    ['平安银行', 13.08]
+                ],
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.1f}', // :.1f 为保留 1 位小数
+                    y: 10
+                }
+            }]
+        });
+    }
+    function backIndex() {
+        $(window).attr('location', 'manage.html');
+    }
+</script>
+<script>
+
+</script>
+</html>

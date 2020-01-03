@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="no-siteapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="问卷">
+    <title>问卷</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="import" href="back_list.html" id="backList"/>
+
+</head>
+<body>
+<div class="container" style="margin-top: 50px;margin-bottom: 40px">
+        <div class="well col-md-6 col-centered">
+            <h3 align="center">问卷详情</h3>
+
+            <div class="form-group">
+                <h4 align="center" style="margin: 20px"><strong>B.反宣币兑换业务</strong></h4>
+                <label>B2.服务规范性考核——大堂经理</label>
+                <br>
+                <label style="color: red">该调查得分：87</label>
+                <hr/>
+                <label style="color: red">所属银行：建设银行</label><br>
+                <label style="color: red">调查网点：顺城大街支行</label><br>
+                <label style="color: red">调查人员：肖潇洒</label>
+                <hr/>
+                <p>1.对于客户提出的业务咨询，大堂经理有问必答，能做到妥善回答，并能主动向客户宣传反宣币兑换的相关业务知识</p>
+                <p>2.对客户提出的不能解答或不在自己管辖范围内的问题，能够引导客户到相应区域或找相关人员帮忙解答，不只是简单回答“不知道”、“不清楚”、“不归我管”等答案</p>
+            </div>
+
+            <div class="radio">
+                <label style="color: red">
+                    <input type="radio" name="b2" value="option1">
+                    大堂经理解决了客户提出的问题
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="b2" value="option2">
+                    大堂经理自己不能解决，求助相关人员帮忙解答，或向客户推荐解决途径
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="b2" value="option2">
+                    不能解决，并回答“不知道”、“不清楚”、“不归我管”等答案
+                </label>
+            </div>
+            <div class="form-group">
+                <label>备注：</label>
+                <input type="text" name="a5" class="form-control" placeholder="请描述具体情节">
+            </div>
+            <button type="btn" class="btn btn-default" onclick="pre()">上一题</button>
+            <button type="btn" class="btn btn-default" onclick="next()">下一题</button>
+        </div>
+</div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="back_list.js"></script>
+<script>
+
+    init();
+
+    function init() {
+        var currentValue = window.localStorage.getItem('b1');
+        if( window.localStorage.getItem('b1')){
+            $("input[type=radio][name=b1][value="+ currentValue +"]").attr("checked",'checked')
+        }
+    }
+    function pre() {
+        history.go(-1)
+    }
+    function next() {
+        window.localStorage.setItem('b2',$('input:radio[nameb1]:checked').val());
+        $(window).attr('location','detail_b3.html');
+    }
+</script>
+</html>

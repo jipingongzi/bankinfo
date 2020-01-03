@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="人员查询详细数据">
+    <title>人员查询详细数据</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="margin-top: 50px">
+    <h3 align="center" style="margin-bottom: 40px"><strong>人员查询详细数据</strong></h3>
+    <hr>
+    <label><strong>姓名：</strong></label><span>张转高</span><br>
+    <label><strong>调查次数：</strong></label><span>13</span><br>
+    <label><strong>平均给分：</strong></label><span>82.4</span><br>
+    <label><strong>账户名：</strong></label><span>user1</span><br>
+    <label><strong>账户密码：</strong></label><span>sad122</span>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>银行</th>
+            <th>网点</th>
+            <th>分数</th>
+            <th>时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>建设银行</td>
+            <td>顺城支行</td>
+            <td>88</td>
+            <td>2019-11-30 12:23:00</td>
+            <td><button class="btn btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>建设银行</td>
+            <td>青羊支行</td>
+            <td>98</td>
+            <td>2019-11-30 16:13:32</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>建设银行</td>
+            <td>金牛支行</td>
+            <td>78</td>
+            <td>2019-12-01 11:03:32</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>建设银行</td>
+            <td>锦江支行</td>
+            <td>92</td>
+            <td>2019-12-02 09:03:32</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>建设银行</td>
+            <td>双流支行</td>
+            <td>88</td>
+            <td>2019-12-04 13:53:32</td>
+            <td><button class="btn  btn-info" onclick="detail()">详情</button></td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <nav aria-label="...">
+            <ul class="pager">
+                <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span>上一页</a></li>
+                <li class="next"><a href="#">下一页<span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div style="margin-top: 80px">
+    <footer class="footer navbar-fixed-bottom" >
+        <p onclick="backIndex()" class="bg-info" style="height: 50px;text-align: center;vertical-align: middle;line-height: 50px">
+            <strong><span style="font-size: large;">回到用户列表</span></strong>
+        </p>
+    </footer>
+</div>
+
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    function backIndex() {
+        $(window).attr('location', 'people.html');
+    }
+    function detail() {
+        $(window).attr('location', 'detail/detail_a1.html');
+    }
+</script>
+</html>
