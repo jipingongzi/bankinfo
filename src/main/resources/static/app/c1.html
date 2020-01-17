@@ -27,19 +27,19 @@
 
             <div class="radio">
                 <label>
-                    <input type="radio" name="c1" value="option1">
+                    <input type="radio" name="c1" value="1">
                     样币册和宣传海报的张贴陈列符合规范
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="c1" value="option2">
+                    <input type="radio" name="c1" value="2">
                     样币册和宣传海报的张贴陈列不符合规范
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="c1" value="option3">
+                    <input type="radio" name="c1" value="3">
                     未张贴陈列样币册和宣传海报，但有电子显示屏集成公示
                 </label>
             </div>
@@ -64,7 +64,7 @@
         history.go(-1)
     }
     function next() {
-        window.localStorage.setItem('c1',$('input:radio[name=a1]:checked').val());
+        window.localStorage.setItem('c1',$('input:radio[name=c1]:checked').val());
         $(window).attr('location','c2.html');
     }
 </script>

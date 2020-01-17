@@ -27,25 +27,25 @@
 
             <div class="radio">
                 <label>
-                    <input type="radio" name="e4" value="option1">
+                    <input type="radio" name="e4" value="1">
                     话术专业、规范，对待客户亲切温和
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="e4" value="option2">
+                    <input type="radio" name="e4" value="2">
                     业务话术不规范、不专业
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="e4" value="option3">
+                    <input type="radio" name="e4" value="3">
                     对客户使用服务禁语
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="e4" value="option4">
+                    <input type="radio" name="e4" value="4">
                     当特殊情况不能办理时，未能及时解释或未向客户提供解决方案
                 </label>
             </div>
@@ -75,7 +75,7 @@
         history.go(-1)
     }
     function next() {
-        window.localStorage.setItem('e4',$('input:radio[name=d4]:checked').val());
+        window.localStorage.setItem('e4',$('input:radio[name=e4]:checked').val());
         $(window).attr('location','finish.html');
     }
 </script>

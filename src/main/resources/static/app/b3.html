@@ -75,11 +75,11 @@
         history.go(-1)
     }
     function next() {
-        var a4Value=[];
+        var b3Value=[];
         $('input[name="b3"]:checked').each(function(){
-            a4Value.push($(this).val()); 
+            b3Value.push($(this).val()); 
         });
-        window.localStorage.setItem('b3',a4Value);
+        window.localStorage.setItem('b3',b3Value);
         $(window).attr('location','c1.html');
     }
 </script>

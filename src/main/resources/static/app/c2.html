@@ -24,13 +24,13 @@
 
             <div class="radio">
                 <label>
-                    <input type="radio" name="c2" value="option1">
+                    <input type="radio" name="c2" value="1">
                     网点提供无偿的不宜流通币兑换服务，不拒绝或推诿
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="c2" value="option2">
+                    <input type="radio" name="c2" value="2">
                     网点拒绝提供无偿的不宜流通币兑换服务
                 </label>
             </div>
@@ -49,7 +49,7 @@
 
     function init() {
         var currentValue = window.localStorage.getItem('c2');
-        if( window.localStorage.getItem('a2')){
+        if( window.localStorage.getItem('c2')){
             $("input[type=radio][name=c2][value="+ currentValue +"]").attr("checked",'checked')
         }
     }

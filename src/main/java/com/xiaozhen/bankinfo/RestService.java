@@ -14,7 +14,7 @@ import java.util.Map;
  * @author xz
  */
 @RestController
-@RequestMapping("/rest")
+@RequestMapping("/app/rest")
 public class RestService {
 
     @GetMapping("/login")

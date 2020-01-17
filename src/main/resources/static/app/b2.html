@@ -25,30 +25,34 @@
 
             <div class="radio">
                 <label>
-                    <input type="radio" name="b2" value="option1">
+                    <input type="radio" name="b2" value="1">
                     大堂经理解决了客户提出的问题
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="b2" value="option2">
+                    <input type="radio" name="b2" value="2">
                     大堂经理自己不能解决，求助相关人员帮忙解答，或向客户推荐解决途径
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="b2" value="option2">
+                    <input type="radio" name="b2" value="3">
                     不能解决，并回答“不知道”、“不清楚”、“不归我管”等答案
                 </label>
             </div>
             <div class="form-group">
                 <label>备注：</label>
-                <input type="text" name="a5" class="form-control" placeholder="请描述具体情节">
+                <input type="text" name="b2_text" class="form-control" placeholder="请描述具体情节">
             </div>
             <button type="btn" class="btn btn-default" onclick="pre()">上一题</button>
-            <button type="btn" class="btn btn-default" onclick="next()">下一题</button>
+            <button type="btn" class="btn btn-default" onclick="next()" data-toggle="popover">下一题</button>
         </div>
 </div>
+
+
+
+
 </body>
 <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -58,17 +62,23 @@
     init();
 
     function init() {
-        var currentValue = window.localStorage.getItem('b1');
-        if( window.localStorage.getItem('b1')){
-            $("input[type=radio][name=b1][value="+ currentValue +"]").attr("checked",'checked')
+        var currentValue = window.localStorage.getItem('b2');
+        if( window.localStorage.getItem('b2')){
+            $("input[type=radio][name=b2][value="+ currentValue +"]").attr("checked",'checked')
         }
+        $('input:text').val(window.localStorage.getItem('b2_text'))
     }
     function pre() {
         history.go(-1)
     }
     function next() {
-        window.localStorage.setItem('b2',$('input:radio[nameb1]:checked').val());
-        $(window).attr('location','b3.html');
+        if($('input:radio[name=b2]:checked').val()) {
+            window.localStorage.setItem('b2', $('input:radio[name=b2]:checked').val());
+            window.localStorage.setItem('b2_text', $('input:text').val());
+            $(window).attr('location', 'b3.html');
+        }else {
+            alert("提示！请先完成此题")
+        }
     }
 </script>
 </html>

@@ -49,7 +49,7 @@
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="4" name="e3" >
+                    <input type="checkbox" value="5" name="e3" >
                     对客户提出的疑议不能准确解答，且未能提出解决方案
                 </label>
             </div>
@@ -80,11 +80,11 @@
         history.go(-1)
     }
     function next() {
-        var a4Value=[];
+        var e3Value=[];
         $('input[name="e3"]:checked').each(function(){
-            a4Value.push($(this).val()); 
+            e3Value.push($(this).val()); 
         });
-        window.localStorage.setItem('e3',a4Value);
+        window.localStorage.setItem('e3',e3Value);
         $(window).attr('location','e4.html');
     }
 </script>

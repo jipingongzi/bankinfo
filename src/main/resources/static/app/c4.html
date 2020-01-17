@@ -82,11 +82,11 @@
         history.go(-1)
     }
     function next() {
-        var a4Value=[];
+        var c4Value=[];
         $('input[name="c4"]:checked').each(function(){
-            a4Value.push($(this).val()); 
+            c4Value.push($(this).val()); 
         });
-        window.localStorage.setItem('c4',a4Value);
+        window.localStorage.setItem('c4',c4Value);
         $(window).attr('location','c5.html');
     }
 </script>
